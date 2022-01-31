@@ -1,0 +1,14 @@
+
+$error: #f6280d;
+$success: #28a745;
+$primary: #3369ff;
+
+@mixin custom-colors {
+    --color: #{$primary};
+    &.error {
+        --color: #{$error} !important;
+    }
+    &.success {
+        --color: #{$success} !important;
+    }
+}

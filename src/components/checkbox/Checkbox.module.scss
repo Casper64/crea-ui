@@ -1,0 +1,49 @@
+@import "../../variables.scss";
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 1;
+    height: 30px;
+
+    label, input {
+        cursor: pointer;
+        font-size: 13.33333px;
+    }
+
+    input {
+        @include custom-colors;
+
+        height: 16px;
+        width: 16px;
+        transition: background .3s, transform .25s ease;;
+        border-radius: 4px;
+        appearance: none;
+        position: relative;
+        border: 1px solid #BBC1E1;
+
+        &::after {
+            content: "";
+            position: absolute;
+            transition: transform 0.3s ease;
+            top: 3px;
+            left: 6px;
+            transform: rotate(43deg);
+            border: 2px solid white;
+            width: 3px;
+            height: 7px;
+            border-top: 0;
+            border-left: 0;
+            box-sizing: inherit;
+        }
+
+        &:checked {
+            background: var(--color);
+        }
+    }
+
+    &:active input {
+        transform: scale(0.9);
+    }
+}

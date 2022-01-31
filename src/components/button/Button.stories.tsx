@@ -1,0 +1,17 @@
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import { Button } from './Button';
+
+export default {
+  title: 'Crea-ui/Button',
+  component: Button,
+} as ComponentMeta<typeof Button>;
+
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+const Template: ComponentStory<typeof Button> = (args) => (
+  <Button {...args}>Click me</Button>
+);
+export const Default = Template.bind({})
+
+Default.args = { shadow: true, "icon-position": "right", color: "primary" }

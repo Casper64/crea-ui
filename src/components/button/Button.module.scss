@@ -1,0 +1,61 @@
+@import "../../variables.scss";
+
+
+.btn {
+    @include custom-colors;
+
+    cursor: pointer;
+    padding: 0.7em 1.7em;
+    text-decoration: none;
+    font-weight: 400;
+    color: #FFFFFF;
+    position: relative;
+    text-align: center;
+    position: relative;
+    width: fit-content;
+    font-size: 1rem;
+    border-radius: 0.2em;
+    transition: background 0.15s ease;
+    background: var(--color);
+
+    
+    &:hover::before {
+        background: rgba(0,0,0,0.07);
+    }
+    &:active::before {
+        background: rgba(0,0,0,0.15);
+    }
+
+    &::before {
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        position: absolute;
+    }
+
+    &.shadow {
+        box-shadow:
+            0 1px 2px rgba(0,0,0,0.07), 
+            0 2px 4px rgba(0,0,0,0.07), 
+            0 4px 8px rgba(0,0,0,0.07), 
+    }
+
+    .button-content {
+        position: relative;
+    }
+
+    .with-icon {
+        display: grid;
+        gap: 10px;
+        grid-auto-flow: column;
+    }
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}

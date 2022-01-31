@@ -1,0 +1,55 @@
+@import "../../variables.scss";
+
+.radio-container {
+    @include custom-colors;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 1;
+    height: 30px;
+    position: relative;
+
+    input {
+        opacity: 0;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        z-index: 1;
+    }
+
+    .radio {
+        transition: all .25s ease; 
+    }
+
+    .radio-effect {
+        background: white;
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        border: 1px solid #BBC1E1;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: scale(0.4);
+            background-color: white;
+            border-radius: 8px;
+        }
+    }
+    input:checked~.radio-effect {
+        background: var(--color);
+        border: none;
+    }
+
+    label {
+        cursor: pointer;
+        font-size: 13.33333px;
+    }
+
+    &:active .radio {
+        transform: scale(0.9);
+    }
+}
